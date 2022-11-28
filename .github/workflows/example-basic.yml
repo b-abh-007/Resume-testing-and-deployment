@@ -19,7 +19,7 @@ jobs:
           # the parameters below are only necessary
           # because we are running these examples in a monorepo
           with:
-            working-directory: test-cypress2/cypress
+            working-directory: test-cypress2/
             # just for full picture after installing Cypress
             # print information about detected browsers, etc
             # see https://on.cypress.io/command-line#cypress-info
