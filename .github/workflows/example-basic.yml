@@ -1,5 +1,9 @@
 name: example-basic
-on: push
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
 jobs:
   basic-ubuntu-18-v10:
       runs-on: ubuntu-latest
