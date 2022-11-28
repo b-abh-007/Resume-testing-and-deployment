@@ -8,7 +8,6 @@ jobs:
   basic-ubuntu-18-v10:
       runs-on: ubuntu-latest
       steps:
-        - run: npm init
         - name: Checkout
           uses: actions/checkout@v2
 
