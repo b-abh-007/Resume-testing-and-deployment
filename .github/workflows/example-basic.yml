@@ -1,12 +1,25 @@
-name: End-to-end tests
-on: [push]
+name: example-basic
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
 jobs:
-  cypress-run:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
+  basic-ubuntu-18-v10:
+      runs-on: ubuntu-18.04
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+
+        - name: Cypress tests
+          # normally you would write
+          # uses: cypress-io/github-action@v2
+          uses: ./
+          # the parameters below are only necessary
+          # because we are running these examples in a monorepo
+          with:
+            working-directory: test-cypress2/cypress
+            # just for full picture after installing Cypress
+            # print information about detected browsers, etc
+            # see https://on.cypress.io/command-line#cypress-info
+            build: npx cypress info
