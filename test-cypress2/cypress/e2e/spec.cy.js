@@ -13,7 +13,7 @@ describe("Resume tests", function () {
         cy.get(".counter")
           .invoke("text")
           .should((text2) => {
-            expect(parseInt(text2)).to.eq(parseInt(text1) + 3);
+            expect(parseInt(text2)).to.eq(parseInt(text1) + 1);
           });
       });
   });
