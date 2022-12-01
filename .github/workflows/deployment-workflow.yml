@@ -1,7 +1,10 @@
-name: Terraform Apply
+name: deployment-workflow
 
-on: [push]
-
+on:
+  workflow_run:
+    workflows: [testing-workflow]
+    types:
+      - completed
 jobs:
   terraform_apply:
     runs-on: ubuntu-latest
