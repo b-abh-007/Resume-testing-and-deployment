@@ -1,4 +1,4 @@
-name: example-basic
+name: testing-workflow
 on:
   push:
     branches:
