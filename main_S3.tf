@@ -8,7 +8,7 @@ resource "aws_s3_bucket_website_configuration" "example" {
 }
 
 resource "aws_s3_bucket_policy" "policy" {
-  bucket = aws_s3_bucket.bucket.id
+  bucket = data.aws_s3_bucket.bucket
   policy = file("bucket-policy.json")
 }
 
