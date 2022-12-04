@@ -23,7 +23,8 @@ resource "aws_s3_bucket_acl" "acl" {
 }
 
 resource "aws_s3_object" "folder-object" {
-  bucket = "test-rwh"
+  # bucket = "test-rwh"
+  bucket = aws_s3_bucket.bucket.bucket
   key    = "Resume/"
   # source       = "../Resume/"
   content_type = "application/x-directory"
@@ -51,7 +52,8 @@ resource "aws_s3_object" "folder-object" {
 resource "aws_s3_object" "html-files" {
   for_each = fileset("../Resume/", "*.html")
 
-  bucket       = "test-rwh"
+  # bucket = "test-rwh"
+  bucket = aws_s3_bucket.bucket.bucket
   key          = "Resume/${each.value}"
   source       = "../Resume/${each.value}"
   content_type = "text/html"
@@ -63,7 +65,8 @@ resource "aws_s3_object" "html-files" {
 resource "aws_s3_object" "css-files" {
   for_each = fileset("../Resume/", "*.css")
 
-  bucket       = "test-rwh"
+  # bucket = "test-rwh"
+  bucket = aws_s3_bucket.bucket.bucket
   key          = "Resume/${each.value}"
   source       = "../Resume/${each.value}"
   content_type = "text/css"
@@ -87,7 +90,8 @@ resource "aws_s3_object" "js-files" {
 resource "aws_s3_object" "image-files" {
   for_each = fileset("../Resume/", "*.png")
 
-  bucket       = "test-rwh"
+  # bucket = "test-rwh"
+  bucket = aws_s3_bucket.bucket.bucket
   key          = "Resume/${each.value}"
   source       = "../Resume/${each.value}"
   content_type = "image/jpeg"
@@ -99,7 +103,8 @@ resource "aws_s3_object" "image-files" {
 resource "aws_s3_object" "image-files-2" {
   for_each = fileset("../Resume/", "*.jfif")
 
-  bucket       = "test-rwh"
+  # bucket = "test-rwh"
+  bucket = aws_s3_bucket.bucket.bucket
   key          = "Resume/${each.value}"
   source       = "../Resume/${each.value}"
   content_type = "image/jpeg"
