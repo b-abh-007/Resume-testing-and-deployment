@@ -2,7 +2,7 @@ resource "aws_s3_bucket_website_configuration" "example" {
   bucket = aws_s3_bucket.bucket.bucket
 
   index_document {
-    suffix = "resume.html"
+    suffix = "resume.html" 
   }
 
 }
