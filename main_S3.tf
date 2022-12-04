@@ -110,5 +110,5 @@ resource "aws_s3_object" "image-files-2" {
   content_type = "image/jpeg"
   # etag makes the file update when it changes;
   # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
-  # etag   = filemd5("../Resume/${each.value}")
+  # etag   = filemd5("../Resume/${each.value}")  
 }
