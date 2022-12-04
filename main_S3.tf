@@ -13,7 +13,7 @@ resource "aws_s3_bucket_policy" "policy" {
 }
 
 resource "aws_s3_bucket" "bucket" {
-  bucket = "test-rwh"
+  bucket = "test-rwh-2"
 }
 
 
