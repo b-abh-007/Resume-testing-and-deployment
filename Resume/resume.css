@@ -9,9 +9,9 @@ body {
   }
 
   .paper{
-    display: grid;
-    grid-template-rows: 195px 75px 50px 225px 50px 320px 50px 325px 50px 150px 50px 180px 50px 60px; 
-                    /*header intro hr education hr experience hr 1skills hr On-campus hr certifications hr visit-counter  */
+    display: grid;     /*Experience: 350px*/
+    grid-template-rows: 195px 75px 50px 225px 50px 190px 50px 240px 50px 300px 50px 150px 50px 180px 50px 60px; 
+                      /*header intro hr education hr projects hr experience hr 1skills hr On-campus hr certifications hr visit-counter  */
     position: relative;
     width: 100%;
     max-width: 1000px;
@@ -60,7 +60,7 @@ body {
   }
   .h3-div{
     display: grid;
-    grid-template-columns: 1fr 200px;
+    grid-template-columns: 1fr 160px;
   }
   .date{
     text-align: right;
@@ -105,9 +105,16 @@ p{
     margin-right: 100px;
 
 }
+.section_projects{
+  display: grid;
+  grid-template-rows: 50px 30px 50px ;
+  margin-left: 100px;
+  margin-right: 100px;
+
+}
 .section_skills{ /*AWS CLI, SDKS, CONSOLE*/
     display: grid;
-    grid-template-rows:50px 25px 150px 25px 25px 25px 25px;
+    grid-template-rows:50px 150px 25px 25px 25px 25px;
     margin-left: 100px;
     margin-right: 100px;
 }
@@ -173,4 +180,7 @@ h4{
 text-align: center;
 font-size: 24px;
 font-weight: bold;
+}
+li{
+  font-size: 16px;
 }
