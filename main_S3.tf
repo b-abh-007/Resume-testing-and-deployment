@@ -12,9 +12,9 @@ resource "aws_s3_bucket_policy" "policy" {
   policy = file("bucket-policy.json")
 }
 
-resource "aws_s3_bucket" "bucket" {
-  bucket = "test-rwh-5"
-}
+# resource "aws_s3_bucket" "bucket" {
+#   bucket = "test-rwh-5"
+# }
 
 
 resource "aws_s3_bucket_acl" "acl" {
