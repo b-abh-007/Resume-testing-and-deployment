@@ -61,7 +61,7 @@ resource "aws_s3_object" "html-files" {
 
   bucket       = local.bucket_name
   key          = "Resume/${each.value}"
-  source       = "Resume/${each.value}"
+  source       = "../Resume/${each.value}"
   content_type = "text/html"
   # etag makes the file update when it changes;
   # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
@@ -73,7 +73,7 @@ resource "aws_s3_object" "css-files" {
 
   bucket       = local.bucket_name
   key          = "Resume/${each.value}"
-  source       = "Resume/${each.value}"
+  source       = "../Resume/${each.value}"
   content_type = "text/css"
   # etag makes the file update when it changes;
   # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
@@ -85,7 +85,7 @@ resource "aws_s3_object" "js-files" {
 
   bucket       = local.bucket_name
   key          = "Resume/${each.value}"
-  source       = "Resume/${each.value}"
+  source       = "../Resume/${each.value}"
   content_type = "application/javascript"
   # etag makes the file update when it changes;
   # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
@@ -97,7 +97,7 @@ resource "aws_s3_object" "image-files" {
 
   bucket       = local.bucket_name
   key          = "Resume/${each.value}"
-  source       = "Resume/${each.value}"
+  source       = "../Resume/${each.value}"
   content_type = "image/jpeg"
   # etag makes the file update when it changes;
   # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
@@ -109,7 +109,7 @@ resource "aws_s3_object" "image-files-2" {
 
   bucket       = local.bucket_name
   key          = "Resume/${each.value}"
-  source       = "Resume/${each.value}"
+  source       = "../Resume/${each.value}"
   content_type = "image/jpeg"
   # etag makes the file update when it changes;
   # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
