@@ -48,60 +48,72 @@ resource "aws_s3_object" "folder-object" {
 #   # etag   = filemd5("../Resume/${each.value}")
 # }
 
-resource "aws_s3_object" "html-files" {
-  for_each = fileset("../Resume/", "*.html")
+# resource "aws_s3_object" "html-files" {
+#   for_each = fileset("../Resume/", "*.html")
+
+#   bucket       = "test-rwh-3"
+#   key          = "Resume/${each.value}"
+#   source       = "../Resume/${each.value}"
+#   content_type = "text/html"
+#   # etag makes the file update when it changes;
+#   # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
+#   # etag   = filemd5("../Resume/${each.value}")
+# }
+
+# resource "aws_s3_object" "css-files" {
+#   for_each = fileset("../Resume/", "*.css")
+
+#   bucket       = "test-rwh-3"
+#   key          = "Resume/${each.value}"
+#   source       = "../Resume/${each.value}"
+#   content_type = "text/css"
+#   # etag makes the file update when it changes;
+#   # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
+#   # etag   = filemd5("../Resume/${each.value}")
+# }
+
+# resource "aws_s3_object" "js-files" {
+#   for_each = fileset("../Resume/", "*.js")
+
+#   bucket       = "test-rwh-3"
+#   key          = "Resume/${each.value}"
+#   source       = "../Resume/${each.value}"
+#   content_type = "application/javascript"
+#   # etag makes the file update when it changes;
+#   # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
+#   # etag   = filemd5("../Resume/${each.value}")
+# }
+
+# resource "aws_s3_object" "image-files" {
+#   for_each = fileset("../Resume/", "*.png")
+
+#   bucket       = "test-rwh-3"
+#   key          = "Resume/${each.value}"
+#   source       = "../Resume/${each.value}"
+#   content_type = "image/jpeg"
+#   # etag makes the file update when it changes;
+#   # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
+#   # etag   = filemd5("../Resume/${each.value}")
+# }
+
+# resource "aws_s3_object" "image-files-2" {
+#   for_each = fileset("../Resume/", "*.jfif")
+
+#   bucket       = "test-rwh-3"
+#   key          = "Resume/${each.value}"
+#   source       = "../Resume/${each.value}"
+#   content_type = "image/jpeg"
+#   # etag makes the file update when it changes;
+#   # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
+#   # etag   = filemd5("../Resume/${each.value}")
+# }
+
+resource "aws_s3_object" "image-files-test" {
+#   for_each = fileset("../Resume/", "*.jfif")
 
   bucket       = "test-rwh-3"
-  key          = "Resume/${each.value}"
-  source       = "../Resume/${each.value}"
-  content_type = "text/html"
-  # etag makes the file update when it changes;
-  # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
-  # etag   = filemd5("../Resume/${each.value}")
-}
-
-resource "aws_s3_object" "css-files" {
-  for_each = fileset("../Resume/", "*.css")
-
-  bucket       = "test-rwh-3"
-  key          = "Resume/${each.value}"
-  source       = "../Resume/${each.value}"
-  content_type = "text/css"
-  # etag makes the file update when it changes;
-  # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
-  # etag   = filemd5("../Resume/${each.value}")
-}
-
-resource "aws_s3_object" "js-files" {
-  for_each = fileset("../Resume/", "*.js")
-
-  bucket       = "test-rwh-3"
-  key          = "Resume/${each.value}"
-  source       = "../Resume/${each.value}"
-  content_type = "application/javascript"
-  # etag makes the file update when it changes;
-  # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
-  # etag   = filemd5("../Resume/${each.value}")
-}
-
-resource "aws_s3_object" "image-files" {
-  for_each = fileset("../Resume/", "*.png")
-
-  bucket       = "test-rwh-3"
-  key          = "Resume/${each.value}"
-  source       = "../Resume/${each.value}"
-  content_type = "image/jpeg"
-  # etag makes the file update when it changes;
-  # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
-  # etag   = filemd5("../Resume/${each.value}")
-}
-
-resource "aws_s3_object" "image-files-2" {
-  for_each = fileset("../Resume/", "*.jfif")
-
-  bucket       = "test-rwh-3"
-  key          = "Resume/${each.value}"
-  source       = "../Resume/${each.value}"
+  key          = "Resume/house.jfif"
+  source       = "../Resume/house.jfif"
   content_type = "image/jpeg"
   # etag makes the file update when it changes;
   # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
