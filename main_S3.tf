@@ -1,5 +1,6 @@
+
 locals {
-  bucket_name = "test-rwh-3"
+  bucket_name = "resume-website-hosting"
 }
 
 resource "aws_s3_bucket_website_configuration" "example" {
