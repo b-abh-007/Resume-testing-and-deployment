@@ -1,6 +1,10 @@
+locals {
+  bucket_name = "test-rwh-3"
+}
+
 resource "aws_s3_bucket_website_configuration" "example" {
 #   bucket = aws_s3_bucket.bucket.bucket
-  bucket = "test-rwh-5"
+  bucket = local.bucket_name
 
   index_document {
     suffix = "resume.html" 
@@ -9,24 +13,24 @@ resource "aws_s3_bucket_website_configuration" "example" {
 }
 
 resource "aws_s3_bucket_policy" "policy" {
-  bucket = "test-rwh-5"
+  bucket = local.bucket_name
 #   bucket = aws_s3_bucket.bucket.id
   policy = file("bucket-policy.json")
 }
 
 # resource "aws_s3_bucket" "bucket" {
-#   bucket = "test-rwh-5"
+#   bucket = local.bucket_name
 # }
 
 
 resource "aws_s3_bucket_acl" "acl" {
 #   bucket = aws_s3_bucket.bucket.id
-bucket = "test-rwh-5"
+bucket = local.bucket_name
   acl    = "public-read"
 }
  
 resource "aws_s3_object" "folder-object" {
-  bucket = "test-rwh-5"
+  bucket = local.bucket_name
   key    = "Resume/"
   # source       = "../Resume/"
   content_type = "application/x-directory"
@@ -54,7 +58,7 @@ resource "aws_s3_object" "folder-object" {
 resource "aws_s3_object" "html-files" {
   for_each = fileset("Resume/", "*.html")
 
-  bucket       = "test-rwh-5"
+  bucket       = local.bucket_name
   key          = "Resume/${each.value}"
   source       = "Resume/${each.value}"
   content_type = "text/html"
@@ -66,7 +70,7 @@ resource "aws_s3_object" "html-files" {
 resource "aws_s3_object" "css-files" {
   for_each = fileset("Resume/", "*.css")
 
-  bucket       = "test-rwh-5"
+  bucket       = local.bucket_name
   key          = "Resume/${each.value}"
   source       = "Resume/${each.value}"
   content_type = "text/css"
@@ -78,7 +82,7 @@ resource "aws_s3_object" "css-files" {
 resource "aws_s3_object" "js-files" {
   for_each = fileset("Resume/", "*.js")
 
-  bucket       = "test-rwh-5"
+  bucket       = local.bucket_name
   key          = "Resume/${each.value}"
   source       = "Resume/${each.value}"
   content_type = "application/javascript"
@@ -90,7 +94,7 @@ resource "aws_s3_object" "js-files" {
 resource "aws_s3_object" "image-files" {
   for_each = fileset("Resume/", "*.png")
 
-  bucket       = "test-rwh-5"
+  bucket       = local.bucket_name
   key          = "Resume/${each.value}"
   source       = "Resume/${each.value}"
   content_type = "image/jpeg"
@@ -102,7 +106,7 @@ resource "aws_s3_object" "image-files" {
 resource "aws_s3_object" "image-files-2" {
   for_each = fileset("Resume/", "*.jfif")
 
-  bucket       = "test-rwh-5"
+  bucket       = local.bucket_name
   key          = "Resume/${each.value}"
   source       = "Resume/${each.value}"
   content_type = "image/jpeg"
@@ -114,7 +118,7 @@ resource "aws_s3_object" "image-files-2" {
 # resource "aws_s3_object" "image-files-test" {
 # #   for_each = fileset("Resume/", "*.jfif")
 
-#   bucket       = "test-rwh-5"
+#   bucket       = local.bucket_name
 #   key          = "Resume/house.jfif"
 #   source       = "Resume/house.jfif"
 #   content_type = "image/jpeg"
