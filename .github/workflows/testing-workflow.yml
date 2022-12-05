@@ -1,8 +1,9 @@
 name: testing-workflow
 on:
-  push:
-    branches:
-      - 'main'
+  workflow_run:
+    workflows: [deployment-workflow]
+    types:
+      - completed
   pull_request:
 jobs:
   basic-ubuntu-18-v10:
