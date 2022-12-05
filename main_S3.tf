@@ -1,5 +1,6 @@
 resource "aws_s3_bucket_website_configuration" "example" {
-  bucket = aws_s3_bucket.bucket.bucket
+#   bucket = aws_s3_bucket.bucket.bucket
+  bucket = "test-rwh-5"
 
   index_document {
     suffix = "resume.html" 
@@ -8,7 +9,8 @@ resource "aws_s3_bucket_website_configuration" "example" {
 }
 
 resource "aws_s3_bucket_policy" "policy" {
-  bucket = aws_s3_bucket.bucket.id
+  bucket = "test-rwh-5"
+#   bucket = aws_s3_bucket.bucket.id
   policy = file("bucket-policy.json")
 }
 
