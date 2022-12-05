@@ -113,7 +113,7 @@ resource "aws_s3_object" "image-files-test" {
 
   bucket       = "test-rwh-3"
   key          = "Resume/house.jfif"
-  source       = "../Resume/house.jfif"
+  source       = "Resume/house.jfif"
   content_type = "image/jpeg"
   # etag makes the file update when it changes;
   # see https://stackoverflow.com/questions/56107258/terraform-upload-file-to-s3-on-every-apply
