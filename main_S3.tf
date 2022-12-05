@@ -20,7 +20,8 @@ resource "aws_s3_bucket_policy" "policy" {
 
 
 resource "aws_s3_bucket_acl" "acl" {
-  bucket = aws_s3_bucket.bucket.id
+#   bucket = aws_s3_bucket.bucket.id
+bucket = "test-rwh-5"
   acl    = "public-read"
 }
  
