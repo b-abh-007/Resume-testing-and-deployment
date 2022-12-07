@@ -9,15 +9,15 @@ body {
   }
 
   .paper{
-    display: grid;     /*Experience: 350px*/
-    grid-template-rows: 195px 75px 50px 225px 50px 190px 50px 240px 50px 300px 50px 150px 50px 180px 50px 60px; 
+    display: grid;     /*Experience: 350px Skills 300*/
+    grid-template-rows: 195px 75px 30px 225px 30px 200px 30px 240px 30px 260px 30px 150px 30px 180px 30px 60px; 
                       /*header intro hr education hr projects hr experience hr 1skills hr On-campus hr certifications hr visit-counter  */
     position: relative;
     width: 100%;
     max-width: 1000px;
     min-height: 1700px;
     background: white; 
-        color: rgb(49, 49, 49);
+    color: rgb(49, 49, 49);
 
   }
   .header{
@@ -69,7 +69,7 @@ body {
   }
 hr{
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     margin-right: 70px;
     margin-left: 70px;
     
@@ -103,8 +103,8 @@ p{
     grid-template-rows: 50px 30px 50px ;
     margin-left: 100px;
     margin-right: 100px;
-
 }
+
 .section_projects{
   display: grid;
   grid-template-rows: 50px 30px 50px ;
@@ -114,7 +114,7 @@ p{
 }
 .section_skills{ /*AWS CLI, SDKS, CONSOLE*/
     display: grid;
-    grid-template-rows:50px 150px 25px 25px 25px 25px;
+    grid-template-rows:30px 130px 25px 25px 25px 25px;
     margin-left: 100px;
     margin-right: 100px;
 }
@@ -151,7 +151,7 @@ p{
 
 h2{
     font-size: 30px;
-    margin-top: 0;
+    margin-top: 0px;
     margin-bottom: 5px;
 }
 h3{
