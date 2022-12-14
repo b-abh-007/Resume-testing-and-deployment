@@ -30,4 +30,4 @@ resource "aws_lambda_permission" "allow_api_gateway" {
   function_name = aws_lambda_function.resume-lambda-function.function_name
   principal     = "apigateway.amazonaws.com"
 }
-
+ 
