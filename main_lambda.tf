@@ -17,7 +17,7 @@ resource "aws_lambda_function" "resume-lambda-function" {
 
   runtime = "nodejs16.x"
 
-}
+} 
 
 data "archive_file" "lambda-archive" {
   type        = "zip"
