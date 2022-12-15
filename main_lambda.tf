@@ -12,7 +12,7 @@ resource "aws_lambda_function" "resume-lambda-function" {
   # If the file is not in the current working directory you will need to include a
   # path.module in the filename.
   depends_on = [
-  archive_file.lambda-archive
+  data.archive_file.lambda-archive
   ]
   filename      = local.lambda_zip_location
   function_name = "resume-lambda-function"
