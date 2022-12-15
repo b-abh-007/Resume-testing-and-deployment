@@ -10,7 +10,7 @@ exports.handler = async (event) => {
     .update({
       TableName: "visitor-counter-table-2.0",
       Key: {
-        "visitor-counter": "counter",
+        "visitor-counter": "resume-counter",
       },
       UpdateExpression: "set #num = #num + :incr",
       ExpressionAttributeNames: {
@@ -25,7 +25,7 @@ exports.handler = async (event) => {
   var visitorCount = await docClient
     .get({
       Key: {
-        "visitor-counter": "counter",
+        "visitor-counter": "resume-counter",
       },
       TableName: "visitor-counter-table-2.0",
       AttributesToGet: ["number"],
