@@ -1,5 +1,5 @@
 resource "aws_api_gateway_rest_api" "test-rest-api" {
-  name = "resumeAPI-2.1"
+  name = "resumeAPI-2.0"
 }
 
 resource "aws_api_gateway_resource" "proxy" {
