@@ -2,9 +2,18 @@ locals { #declaring local variables
   lambda_zip_location = "output/lambda-function.zip"
 }
 
+data "archive_file" "lambda-archive" {
+  type        = "zip"
+  source_file = "lambda-function.js"
+  output_path = local.lambda_zip_location
+}
+
 resource "aws_lambda_function" "resume-lambda-function" {
   # If the file is not in the current working directory you will need to include a
   # path.module in the filename.
+  depends_on = [
+  archive_file.lambda-archive
+  ]
   filename      = local.lambda_zip_location
   function_name = "resume-lambda-function"
   role          = aws_iam_role.test-lambda-role.arn
@@ -19,11 +28,7 @@ resource "aws_lambda_function" "resume-lambda-function" {
 
 } 
 
-data "archive_file" "lambda-archive" {
-  type        = "zip"
-  source_file = "lambda-function.js"
-  output_path = local.lambda_zip_location
-}
+
 
 resource "aws_lambda_permission" "allow_api_gateway" {
   action        = "lambda:InvokeFunction"
