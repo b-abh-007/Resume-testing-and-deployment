@@ -6,7 +6,7 @@ resource "aws_lambda_function" "resume-lambda-function" {
   # If the file is not in the current working directory you will need to include a
   # path.module in the filename.
   filename      = local.lambda_zip_location
-  function_name = "resume-lambda-function-boto3"
+  function_name = "resume-lambda-function-python"
   role          = aws_iam_role.test-lambda-role.arn
 
   handler = "handler"
